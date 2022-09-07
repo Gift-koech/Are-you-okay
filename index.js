@@ -5,11 +5,28 @@ const options = {
 		'X-RapidAPI-Host': 'mental-health-info-api.p.rapidapi.com'
 	}
 };
-fetch('https://mental-health-info-api.p.rapidapi.com/news/thetimes', options)
-	.then(function(response){
-        console.log(response);
-        return response.json();
+
+    fetch('https://mental-health-info-api.p.rapidapi.com/news/thetimes', options).then(response => {
+        return response.json(); 
     })
-    .then(function(data){
-        console.log(data);
+    .then(data =>{
+        console.log(data.data);
+        const html = data
+        .map(article => {
+            return `
+            <div class = "user">
+            <p>Source:${article.source}</p>
+            <p>Title:${article.title}</p>
+            <p>${article.url}</p>
+            </div>
+            `;
+        })
+        .join('');
+        console.log(html);
+        document.querySelector("#app").insertAdjacentHTML('afterbegin',html) 
     })
+
+	
+	    
+
+    

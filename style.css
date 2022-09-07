@@ -1,5 +1,5 @@
 body{
-    background-color:grey;
+    background-color:whitesmoke;
 }
 h1{
     text-align: center;
@@ -7,4 +7,12 @@ h1{
 }
 span{
     color: rgb(255, 205, 6);
+}
+.user {
+    background-color: gray;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 15px;
+    display: block;
+    
 }
