@@ -5,26 +5,37 @@ const options = {
 		'X-RapidAPI-Host': 'mental-health-info-api.p.rapidapi.com'
 	}
 };
-
-    fetch('https://mental-health-info-api.p.rapidapi.com/news/thetimes', options).then(response => {
+ 
+search = document.querySelector("#searchbar")
+ search.addEventListener("submit",(e)=>{
+    e.preventDefault()
+    console.log(e.target.search.value);
+    fetch(`https://mental-health-info-api.p.rapidapi.com/news/${e.target.search.value}`, options).then(response => {
         return response.json(); 
     })
     .then(data =>{
-        console.log(data.data);
+        console.log(data);
         const html = data
         .map(article => {
+            document.querySelector("#app").innerHTML=``
             return `
-            <div class = "user">
-            <p>Source:${article.source}</p>
-            <p>Title:${article.title}</p>
-            <p>${article.url}</p>
+            <div class = "user flex-child">
+            <p>${article.source}</p>
+            <p>${article.title}</p>
+            <a href="${article.url}">click here</a>
             </div>
             `;
         })
         .join('');
-        console.log(html);
+        //console.log(html);
         document.querySelector("#app").insertAdjacentHTML('afterbegin',html) 
+  
     })
+    e.target.reset();
+})
+    
+    
+    
 
 	
 	    
