@@ -6,7 +6,7 @@ const options = {
 	}
 };
  
-search = document.querySelector("#searchbar")
+
  search.addEventListener("submit",(e)=>{
     e.preventDefault()
     console.log(e.target.search.value);
