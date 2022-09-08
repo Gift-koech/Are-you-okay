@@ -28,12 +28,12 @@ search = document.querySelector("#searchbar")
            </div>
             `;
         })
-        .join('');
+        .join('')
         //console.log(html);
         document.querySelector("#app").insertAdjacentHTML('afterbegin',html) 
   
     })
-    e.target.reset(){};
+    e.target.reset();
 })
 
     
