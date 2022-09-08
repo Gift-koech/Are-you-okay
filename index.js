@@ -20,10 +20,12 @@ search = document.querySelector("#searchbar")
         .map(article => {
             document.querySelector("#app").innerHTML=``
             return `
-            <div class = "user flex-child">
-            <p>${article.source}</p>
-            <p>${article.title}</p>
-            </div>
+         
+           <div class = "user flex-child">
+
+         <p>${article.source}</p>
+          <p>${article.title}</p><
+           </div>
             `;
         })
         .join('');
