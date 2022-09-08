@@ -33,7 +33,7 @@ search = document.querySelector("#searchbar")
         document.querySelector("#app").insertAdjacentHTML('afterbegin',html) 
   
     })
-    e.target.reset();
+    e.target.reset(){};
 })
 
     
