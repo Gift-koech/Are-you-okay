@@ -5,7 +5,8 @@ const options = {
 		'X-RapidAPI-Host': 'mental-health-info-api.p.rapidapi.com'
 	}
 };
- 
+
+
 search = document.querySelector("#searchbar")
  search.addEventListener("submit",(e)=>{
     e.preventDefault()
@@ -22,7 +23,6 @@ search = document.querySelector("#searchbar")
             <div class = "user flex-child">
             <p>${article.source}</p>
             <p>${article.title}</p>
-            <a href="${article.url}">click here</a>
             </div>
             `;
         })
@@ -33,6 +33,16 @@ search = document.querySelector("#searchbar")
     })
     e.target.reset();
 })
+function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+  }
+
     
     
     
