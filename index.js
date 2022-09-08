@@ -18,7 +18,7 @@ search = document.querySelector("#searchbar")
         console.log(data);
         const html = data
         .map(article => {
-            document.querySelector("#app").innerHTML=``
+            document.quelySelector("#app").innerHTML=``
             return `
          
            <div class = "user flex-child">
@@ -28,14 +28,25 @@ search = document.querySelector("#searchbar")
            </div>
             `;
         })
-        .join('')
+        .join('');
         //console.log(html);
         document.querySelector("#app").insertAdjacentHTML('afterbegin',html) 
   
     })
     e.target.reset();
 })
+function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+  }
 
+    
+    
     
 
 	
