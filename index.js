@@ -7,7 +7,9 @@ const options = {
 };
 
 
-
+search = document.querySelector("#searchbar")
+ search.addEventListener("submit",(e)=>{
+    e.preventDefault()
     console.log(e.target.search.value);
     fetch(`https://mental-health-info-api.p.rapidapi.com/news/${e.target.search.value}`, options).then(response => {
         return response.json(); 
@@ -31,7 +33,7 @@ const options = {
         document.querySelector("#app").insertAdjacentHTML('afterbegin',html) 
   
     })
-    e.target.reset();
+   
 })
 function openNav() {
     document.getElementById("mySidebar").style.width = "250px";
